@@ -1,0 +1,174 @@
+#include <iostream>
+using namespace std;
+class cq
+{
+public:
+    static int score;
+
+    void easy()
+    {
+        char ans;
+
+        cout << "\n--- Cricket Quiz : Easy Level ---\n";
+
+        cout << "1. Who is known as the God of Cricket?\n";
+        cout << "A. Ricky Ponting\nB. Sachin Tendulkar\nC. Virat Kohli\nD. MS Dhoni\n";
+        cout << "Enter answer: ";
+        cin >> ans;
+        if(ans=='B' || ans=='b') score += 4;
+        else score -= 1;
+
+        cout << "2. How many players are there in a cricket team?\n";
+        cout << "A. 9\nB. 10\nC. 11\nD. 12\n";
+        cout << "Enter answer: ";
+        cin >> ans;
+        if(ans=='C' || ans=='c') score += 4;
+        else score -= 1;
+    }
+
+    void medium()
+    {
+        char ans;
+
+        cout << "\n--- Cricket Quiz : Medium Level ---\n";
+
+        cout << "1. Which country won the 2011 Cricket World Cup?\n";
+        cout << "A. India\nB. Australia\nC. England\nD. New Zealand\n";
+        cout << "Enter answer: ";
+        cin >> ans;
+        if(ans=='A' || ans=='a') score += 4;
+        else score -= 1;
+    }
+
+    void hard()
+    {
+        char ans;
+
+        cout << "\n--- Cricket Quiz : Hard Level ---\n";
+
+        cout << "1. What is the maximum length of a cricket pitch?\n";
+        cout << "A. 20 yards\nB. 22 yards\nC. 24 yards\nD. 26 yards\n";
+        cout << "Enter answer: ";
+        cin >> ans;
+        if(ans=='B' || ans=='b') score += 4;
+        else score -= 1;
+    }
+};
+
+int cq::score = 0;
+
+class moq
+{
+public:
+    static int score;
+
+    void easy()
+    {
+        char ans;
+
+        cout << "\n--- Movie Quiz : Easy Level ---\n";
+
+        cout << "1. Which device is used to project a movie in a theatre?\n";
+        cout << "A. Monitor\nB. Printer\nC. Projector\nD. Scanner\n";
+        cout << "Enter answer: ";
+        cin >> ans;
+        if(ans=='C' || ans=='c') score += 4;
+        else score -= 1;
+    }
+
+    void medium()
+    {
+        char ans;
+
+        cout << "\n--- Movie Quiz : Medium Level ---\n";
+
+        cout << "1. Which person directs a film?\n";
+        cout << "A. Director\nB. Editor\nC. Singer\nD. Dancer\n";
+        cout << "Enter answer: ";
+        cin >> ans;
+        if(ans=='A' || ans=='a') score += 4;
+        else score -= 1;
+    }
+
+    void hard()
+    {
+        char ans;
+
+        cout << "\n--- Movie Quiz : Hard Level ---\n";
+
+        cout << "1. Which department handles visual continuity of scenes?\n";
+        cout << "A. Editing\nB. Catering\nC. Transport\nD. Accounts\n";
+        cout << "Enter answer: ";
+        cin >> ans;
+        if(ans=='A' || ans=='a') score += 4;
+        else score -= 1;
+    }
+};
+
+int moq::score = 0;
+
+int main()
+{
+    int category, level;
+    cq c;
+    moq m;
+
+    cout << "========== QUIZ SYSTEM USING C++ ==========" << endl;
+    cout << "1. Cricket Quiz" << endl;
+    cout << "2. Movie Quiz" << endl;
+    cout << "3. Exit" << endl;
+    cout << "Enter your choice: ";
+    cin >> category;
+
+    switch(category)
+    {
+        case 1:
+            cout << "\n1. Easy\n2. Medium\n3. Hard\n";
+            cout << "Enter level: ";
+            cin >> level;
+            switch(level)
+            {
+                case 1: c.easy(); break;
+                case 2: c.medium(); break;
+                case 3: c.hard(); break;
+                default: cout << "Invalid level" << endl;
+            }
+            cout << "Cricket Score: " << cq::score << endl;
+            if(cq::score >= 8)
+                cout << "You have a great knowledge in cricket" << endl;
+            else
+                cout << "You need to improve your cricket knowledge" << endl;
+            break;
+
+        case 2:
+            cout << "\n1. Easy\n2. Medium\n3. Hard\n";
+            cout << "Enter level: ";
+            cin >> level;
+            switch(level)
+            {
+                case 1: m.easy(); break;
+                case 2: m.medium(); break;
+                case 3: m.hard(); break;
+                default: cout << "Invalid level" << endl;
+            }
+            cout << "Movie Score: " << moq::score << endl;
+            if(moq::score >= 4)
+                cout << "You have a good knowledge in movies" << endl;
+            else
+                cout << "You need to improve your movie knowledge" << endl;
+            break;
+
+        case 3:
+            cout << "Exiting program..." << endl;
+            break;
+
+        default:
+            cout << "Invalid choice" << endl;
+    }
+
+    return 0;
+}
+
+
+
+
